@@ -1,0 +1,21 @@
+users:
+  documentID: userID
+  name: String?
+  createdAt: Date
+
+  did:
+    documentID: auto
+    title: String
+    createdAt: Date
+    updatedAt: Date
+    completedAt: Date
+    isCompleted: Bool
+
+    dig:
+      documentID: auto
+      title: String
+      createdAt: Date
+      updatedAt: Date
+      completedAt: Date
+      isCompleted: Bool
+      count: Int

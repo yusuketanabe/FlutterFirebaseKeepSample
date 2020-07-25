@@ -1,0 +1,43 @@
+{
+  "name": "did_test",
+  "version": "1.0.0",
+  "author": "yusuketanabe",
+  "license": "ISC",
+  "description": "test",
+  "dependencies": {},
+  "devDependencies": {
+    "@firebase/testing": "^0.20.4",
+    "@types/jest": "^26.0.3",
+    "@types/uuid": "^8.0.0",
+    "firebase-admin": "^8.12.1",
+    "fs": "0.0.1-security",
+    "jest": "^26.1.0",
+    "jest-environment-uint8array": "^1.0.0",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "test": "firebase emulators:exec --only firestore 'jest'"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  },
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.json",
+      "diagnostics": false
+    }
+  },
+  "testMatch": [
+    "**/*.test.ts"
+  ]
+}
