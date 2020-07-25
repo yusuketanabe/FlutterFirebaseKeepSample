@@ -17,7 +17,7 @@ class Keep extends StatelessWidget {
             .map((user) => CurrentUser.create(user)),
         child: Consumer<CurrentUser>(
           builder: (context, user, _) => MaterialApp(
-            title: 'Did App',
+            title: 'Keep',
             home: user.isInitialValue
                 ? Scaffold(body: const Text('Loading...'))
                 : user.data != null ? HomeScreen() : LoginScreen(),
