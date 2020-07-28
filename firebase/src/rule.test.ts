@@ -1,9 +1,11 @@
+// firestoreルールを使ったテストを実行する
+
 import * as firebase from '@firebase/testing'
 import * as fs from 'fs'
 import { randomID } from './testHelper'
 
-const projectID = 'did'
-const databaseName = 'didApp'
+const projectID = 'test sample'
+const databaseName = 'firebase-database-name'
 const rules = fs.readFileSync('./firestore.rules', 'utf8')
 
 // firestore client for admin

@@ -1,3 +1,6 @@
+## 'firebase deploy'コマンドでルールを適用させれる
+## 以下はサンプル
+
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {

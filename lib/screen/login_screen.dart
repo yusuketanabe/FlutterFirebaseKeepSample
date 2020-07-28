@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -10,10 +11,11 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
+  bool _loggingIn = false;
   String _errorMessage;
 
   @override
-  Widget buil(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         body: Center(
           child: Column(
             children: <Widget>[
@@ -40,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final googleAuth = await googleUser.authentication;
       final credential = GoogleAuthProvider.getCredential(
         idToken: googleAuth.idToken,
-        accessToken: googleAuth.accesToken,
+        accessToken: googleAuth.accessToken,
       );
       await _auth.signInWithCredential(credential);
     } catch (e) {
@@ -50,10 +52,10 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  void _setLoggingIn([bool logginIn = true, String errMsg]) {
+  void _setLoggingIn([bool loggingIn = true, String errMsg]) {
     if (mounted) {
       setState(() {
-        _logginIn = logginIn;
+        _loggingIn = loggingIn;
         _errorMessage = errMsg;
       });
     }
