@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 // このクラスのフィールドが不変であることを示す。finalでないフィールドが宣言されていると警告が出る
 @immutable
 class CurrentUser {
-  // 初期値であるか判定。trueの場合は_userはnullとして初期値のインスタンスinitialを作っている。
+  // 初期値であるか判定。何らかの理由でfirebaseのインスタンスが作成されなかったらtrueのまま
+  // trueの場合は_userはnullとして初期値のインスタンスinitialを作っている。
   final bool isInitialValue;
 
   // ログインしているユーザーを受け取る不変な定数
